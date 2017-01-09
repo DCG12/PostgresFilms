@@ -18,16 +18,16 @@ public class createSQLite {
                 System.out.println("Opened database successfully");
 
                 stmt = c.createStatement();
-                String sql = "CREATE TABLE MOVIES3 " +
+                String sql = "CREATE TABLE MOVIES " +
                         "(idMovie       INT     PRIMARY KEY     NOT NULL," +
                         " titulo        TEXT                    NOT NULL, " +
                         " fecha         VARCHAR(50)                    NOT NULL)";
                 stmt.executeUpdate(sql);
-                sql = "CREATE TABLE ACTORES3 " +
+                sql = "CREATE TABLE ACTORES " +
                         "(idAct              INT       PRIMARY KEY    NOT NULL," +
                         " Nombre          CHAR(50)                    NOT NULL )";
                 stmt.executeUpdate(sql);
-                sql = "CREATE TABLE AXM3 " +
+                sql = "CREATE TABLE AXM " +
                         "(movieId         INT                      NOT NULL," +
                         "idActor          INT                      NOT NULL," +
                         "cast_id          INT           NOT NULL ," +

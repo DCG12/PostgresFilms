@@ -23,7 +23,7 @@ public class insertSQLite {
 
             stmt = c.createStatement();
 
-            String sql = "INSERT INTO MOVIES3 (idMovie, titulo, fecha) " +
+            String sql = "INSERT INTO MOVIES (idMovie, titulo, fecha) " +
                     "VALUES" + "(?, ?, ?);";
 
             PreparedStatement preparedstament = c.prepareStatement(sql);
@@ -55,7 +55,7 @@ public class insertSQLite {
 
             stmt = c.createStatement();
 
-            String sql = "INSERT INTO ACTORES3 (idAct, Nombre) " +
+            String sql = "INSERT INTO ACTORES (idAct, Nombre) " +
                     "VALUES" + "(?, ?);";
 
             PreparedStatement preparedstament = c.prepareStatement(sql);
@@ -88,7 +88,7 @@ public class insertSQLite {
 
             stmt = c.createStatement();
 
-            String sql = "INSERT INTO AXM3 (movieId, idActor, cast_id, Personaje) " +
+            String sql = "INSERT INTO AXM (movieId, idActor, cast_id, Personaje) " +
                     "VALUES" + "( ?, ?, ?, ?);";
 
             PreparedStatement preparedstament = c.prepareStatement(sql);

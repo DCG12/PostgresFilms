@@ -38,7 +38,7 @@ public class themovieDBproject {
         String s = "";
         String api_key = "22dc8ee0cdffaed336cb797e630ad06f";
 
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i < 500; i++) {
             int peli = 600 + i;
             String film = String.valueOf(peli);
             String peticio = "https://api.themoviedb.org/3/movie/" + film + "?api_key=" + api_key;
@@ -55,8 +55,8 @@ public class themovieDBproject {
         String c = "";
         String api_key = "22dc8ee0cdffaed336cb797e630ad06f";
 
-        for (int i = 0; i < 100; i++) {
-            int peli = 1 + i;
+        for (int i = 0; i < 500; i++) {
+            int peli = 8800 + i;
             String film = String.valueOf(peli);
             String peticio2 = "https://api.themoviedb.org/3/person/" + film + "?api_key=" + api_key;
             try {
@@ -72,7 +72,7 @@ public class themovieDBproject {
         String m = "";
         String api_key = "22dc8ee0cdffaed336cb797e630ad06f";
 
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i < 500; i++) {
             int peli = 600 + i;
             String film = String.valueOf(peli);
             String peticio3 = "https://api.themoviedb.org/3/movie/" + film + "/credits?api_key=22dc8ee0cdffaed336cb797e630ad06f";

@@ -26,7 +26,7 @@ public class selectSQLite {
             System.out.println("Opened database successfully");
 
             stmt = c.createStatement();
-            ResultSet rs = stmt.executeQuery( "SELECT * FROM ACTORES3;" );
+            ResultSet rs = stmt.executeQuery( "SELECT * FROM ACTORES;" );
             while ( rs.next() ) {
                 int id = rs.getInt("idAct");
                 String  name = rs.getString("Nombre");
@@ -53,7 +53,7 @@ public class selectSQLite {
             System.out.println("Opened database successfully");
 
             stmt = c.createStatement();
-            ResultSet rs = stmt.executeQuery( "SELECT * FROM MOVIES3;" );
+            ResultSet rs = stmt.executeQuery( "SELECT * FROM MOVIES;" );
             while ( rs.next() ) {
                 int id = rs.getInt("idMovie");
                 String  name = rs.getString("titulo");
@@ -79,13 +79,42 @@ public class selectSQLite {
             System.out.println("Opened database successfully");
 
             stmt = c.createStatement();
-            ResultSet rs = stmt.executeQuery( "SELECT * FROM AXM3;" );
+            ResultSet rs = stmt.executeQuery( "SELECT * FROM AXM;" );
             while ( rs.next() ) {
-                int movie_id = rs.getInt("idMovie");
+                int movie_id = rs.getInt("MovieId");
                 int actor_id = rs.getInt("idActor");
                 int cast_id = rs.getInt("cast_id");
-                String  character = rs.getString("titulo");
-                System.out.println( "ID PELICULA = " + movie_id + " ID ACTOR= " + actor_id + " ID CAST= " + cast_id + " PERSONATGE= " + character);
+                String  character = rs.getString("Personaje");
+                System.out.println(" PERSONATGE = " + character + "iD PELICULA = " + movie_id + " ID ACTOR = " + actor_id + " ID CAST = " + cast_id );
+            }
+            rs.close();
+            stmt.close();
+            c.close();
+        } catch ( Exception e ) {
+            System.err.println( e.getClass().getName() + ": " + e.getMessage() );
+            System.exit(0);
+        }
+        System.out.println("Operation done successfully");
+    }
+    public static void extreuPersonajeSegonsId(){
+        Connection c = null;
+        Statement stmt = null;
+        try {
+            Class.forName("org.postgresql.Driver");
+            c = DriverManager.getConnection("jdbc:postgresql://172.31.73.192:5432/jerry","davidc", "davidc");
+            c.setAutoCommit(false);
+            System.out.println("Opened database successfully");
+
+            Main m = new Main();
+            int aux1 = m.idact;
+            stmt = c.createStatement();
+            ResultSet rs = stmt.executeQuery( "SELECT Personaje FROM AXM WHERE (idActor =  "+aux1+"  );" );
+            while ( rs.next() ) {/*
+                int movie_id = rs.getInt("MovieId");
+                int actor_id = rs.getInt("idActor");
+                int cast_id = rs.getInt("cast_id");*/
+                String  character = rs.getString("Personaje");
+                System.out.println(" PERSONATGE = " + character);
             }
             rs.close();
             stmt.close();
